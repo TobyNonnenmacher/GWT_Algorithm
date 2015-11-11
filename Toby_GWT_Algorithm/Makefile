@@ -24,7 +24,7 @@ reorder: reorder.cpp reorder.h
 
 
  run_short: reorder
-	./reorder desyncFilter.txt $output.txt 
+	./reorder desyncFilter.txt output.txt 
 # 	./root_longest_chain desyncFilter.txt $(SCRAMBLE)Karol_scramble_output.txt $(SCRAMBLE)additive_scramble_output.txt $(SCRAMBLE)VeloPix_scramble_output.txt $(ROOTDIR)longest_chain_short.root
 # 	./root_balance_analysis desyncFilter.txt $(SCRAMBLE)Karol_scramble_output.txt $(SCRAMBLE)additive_scramble_output.txt $(SCRAMBLE)VeloPix_scramble_output.txt $(ROOTDIR)balance_analysis_short.root
 
