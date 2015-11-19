@@ -1,0 +1,72 @@
+
+#ifndef __reorder_h____
+#define __reorder_h____
+
+#include <bitset>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <assert.h>
+#include <vector>
+
+#define __debug_mode__
+
+using namespace std;
+
+typedef bitset<128> frame;
+
+//Simulation Functions
+frame str_to_frame         (string)        ;
+
+frame   Reorder              (frame)           ;
+
+
+//Main
+int main(int argc, const char * argv[])
+{
+  //Check Command Line Arguments
+  if (argc != 3)
+    {
+      cerr << "Incorrect arguments, please specify input and output files" << endl;
+      cerr << "e.g. $:  <input_file> <output_file>" << endl;
+      return 1;
+    }
+
+  //Files
+  fstream input_file(argv[1]);
+  ofstream output_file(argv[2]);
+   
+ 
+
+
+
+
+  int frame_count(0);  
+  while(!input_file.eof())  
+    {       
+     
+      string buffer; input_file >> buffer;
+    
+     
+      frame data_frame;
+
+      data_frame = str_to_frame(buffer);
+      frame  data_output;
+
+
+
+      data_output= Reorder(data_frame);
+		 
+      	 
+      ofstream myfile;
+      //write to out files
+      	    
+      output_file << data_output << endl;
+
+      
+    }
+
+  
+}
+
+#endif
