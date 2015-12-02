@@ -1,0 +1,10 @@
+def to_twoscomplement(bits, value):
+    if value < 0:
+        value = ( 1<<bits ) + value
+    formatstring = '{:0%ib}' % bits
+    return formatstring.format(value)
+
+>>> to_twoscomplement(16, 3)
+'0000000000000011'
+>>> to_twoscomplement(16, -3)
+'1111111111111101'

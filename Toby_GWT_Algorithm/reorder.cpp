@@ -18,23 +18,25 @@ frame str_to_frame(string signal)
 frame Reorder(frame TX_DATA_IN)
 {
   frame TX_DATA_OUT; 
+      
   //TX_DATA_OUT = TX_DATA_IN;
   
-
-
-  for (int i(0); i <= 2; i++)
-
+  for (int j(0); j<=7;j++)
     {
-      TX_DATA_OUT[i] = TX_DATA_IN[i+13];
+      
+      for (int i(0+16*j); i <= 2+16*j; i++)
+
+	{
+	  TX_DATA_OUT[i] = TX_DATA_IN[i+13];
+	}
+
+
+      for (int i(3+16*j); i <= 15+16*j; i++)
+
+	{
+	  TX_DATA_OUT[i] = TX_DATA_IN[i-3];
+	}
     }
-
-
-  for (int i(3); i <= 16; i++)
-
-    {
-      TX_DATA_OUT[i] = TX_DATA_IN[i-3];
-    }
-
 
 
 

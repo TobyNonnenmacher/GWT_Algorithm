@@ -9,9 +9,11 @@ reorder: reorder.cpp reorder.h
 GwtChains: root_GwtChains.cpp root_GwtChains.h
 	g++ -o $@ root_GwtChains.cpp $(ROOTFLAGS) $(ROOTLIBS)
 
-run_short: reorder GwtChains
+
+run_short: reorder root_GwtChains
 	./reorder 	desyncFilter.txt 	output.txt 
 	./GwtChains	gwt_pll_1000frames.txt	root_GwtChains.root
+
 
 clean:
 	rm -f reorder GwtChains
