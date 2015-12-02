@@ -8,25 +8,22 @@
 #include <TGraph.h>
 #include <TH1.h>
 #include <string>
-#include <bitset>
 #include <vector>
+#include <sstream>
+#include <stdio.h>     
+#include <stdlib.h> 
 
 using namespace std;
 
-
-//typedef
-typedef bitset<128> frame;
-
 //hist
-TH1F * histogram;
+TH1F    * histogram;
 fstream * input_file;
-TFile * output_file;
+TFile   * output_file;
 
 //functions
 void   graph_init        ();
 void   draw_graphs       ();
-int    chain_count       (frame, TH1F*);
-frame  str_to_frame      (string);
+int    transition_count  (vector<int>, TH1F*);
 void   save_graphs       ();
 
 //Main
